@@ -1,0 +1,23 @@
+std := #use("std")
+
+<-- single-line comment
+
+<--
+    multi-line comment
+    lets go
+-->
+
+main: int = #forge(
+    argc: int,
+    argv: []string
+) {
+    stdout := <<std->stdout
+
+    if (argc != 2) {
+        stdout::writeln("i need 2 arguments bru")
+        #return(1)
+    }
+
+    stdout::writeln(std->format("Hello, @!\n", argv[1]))
+    #return(0)
+}
