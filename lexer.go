@@ -71,6 +71,7 @@ const (
     TokenBreak
     TokenContinue
     TokenType
+    TokenAsm
 
     // Literals
     TokenIdentifier
@@ -104,6 +105,7 @@ var keywords = map[string]TokenEnum {
     "break":    TokenBreak,
     "continue": TokenContinue,
     "type":     TokenType,
+    "asm":      TokenAsm,
 }
 
 var doubleSymbols = map[string]TokenEnum{
