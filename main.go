@@ -11,10 +11,8 @@ func main() {
 
     lexer := NewLexer(filename, string(file))
     parser := NewParser(lexer)
+    parser.Parse()
 
-    parser.__suppress()
-
-    // ast := parser.Parse()
     // executor := NewExecutor(ast)    // or compiler if i want it to be asm
     // executor.Run()
 }

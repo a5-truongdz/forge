@@ -81,6 +81,86 @@ const (
     TokenLString
 )
 
+var tokenNames = [...]string{
+    "EOF",
+    "\\n",
+
+    ":",
+    "=",
+    ",",
+    "<",
+    ">",
+    "!",
+    "|",
+    "+",
+    "-",
+    "*",
+    "/",
+    "^",
+    ".",
+    "#",
+    "%",
+
+    "(",
+    ")",
+    "{",
+    "}",
+    "[",
+    "]",
+
+    ":=",
+    "==",
+    "!=",
+    "<=",
+    ">=",
+    "->",
+    "::",
+    "..",
+    ">>",
+    "<<",
+    "&&",
+    "||",
+
+    "public",
+    "private",
+    "use",
+    "class",
+    "struct",
+    "mut",
+    "return",
+    "int",
+    "float",
+    "bool",
+    "char",
+    "string",
+    "true",
+    "false",
+    "for",
+    "when",
+    "if",
+    "elif",
+    "else",
+    "forge",
+    "break",
+    "continue",
+    "type",
+    "asm",
+
+    "identifier",
+    "integer",
+    "float",
+    "character",
+    "string",
+}
+
+func (t TokenEnum) String() string {
+    if int(t) >= 0 && int(t) < len(tokenNames) {
+        return tokenNames[t]
+    }
+
+    return "unknown"
+}
+
 var keywords = map[string]TokenEnum {
     "public":   TokenPublic,
     "private":  TokenPrivate,
